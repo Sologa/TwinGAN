@@ -802,6 +802,7 @@ class GeneralModel(object):
     """Auxiliary function for preparing one single dataset."""
     with tf.device(deploy_config.inputs_device()):
       ret_raw = {}
+      print(dataset.data_sources[1])
       if not is_synthetic:
         provider = slim.dataset_data_provider.DatasetDataProvider(
           dataset,
@@ -846,6 +847,7 @@ class GeneralModel(object):
     """Does preprocessing on input datasets."""
     if FLAGS.unpaired_target_dataset_name:
       assert len(dataset) == 2, 'If `unpaired_target_dataset_name` is on, there must be two datasets.'
+      print(FLAGS.dataset_dir)
       data_a = self._prepare_data_aux(dataset[0], image_preprocessing_fn, deploy_config,
                                       is_synthetic=(not FLAGS.dataset_dir), name='a')
       data_b = self._prepare_data_aux(dataset[1], image_preprocessing_fn, deploy_config,
@@ -1015,6 +1017,7 @@ class GeneralModel(object):
       ##############################################################
       # Create a dataset provider that loads data from the dataset #
       ##############################################################
+      
       data = self._prepare_data(dataset, image_preprocessing_fn, deploy_config, )
       data_batched = self._get_batch(data)
       batch_names = data_batched.keys()
