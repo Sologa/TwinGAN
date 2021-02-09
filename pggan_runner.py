@@ -64,7 +64,7 @@ def set_flags(param_val_dict):
   :param param_val_dict: a dictionary containing argument names and values
   """
   FLAGS.__dict__['__parsed'] = False
-  for param, val in param_val_dict.iteritems():
+  for param, val in param_val_dict.items():
     setattr(FLAGS, param, val)  # Set tensorflow flags.
 
 
