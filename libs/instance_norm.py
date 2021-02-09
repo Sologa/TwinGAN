@@ -18,7 +18,7 @@ from tensorflow.contrib.framework.python.ops import add_arg_scope
 from tensorflow.contrib.framework.python.ops import variables
 from tensorflow.contrib.layers.python.layers import utils
 from tensorflow.python.framework import ops
-from batch_norm import get_conditional_batch_norm_param
+from libs.batch_norm import get_conditional_batch_norm_param
 
 
 DATA_FORMAT_NCHW = 'NCHW'
