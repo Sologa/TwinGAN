@@ -16,7 +16,7 @@ limitations under the License.
 import numpy as np
 import tensorflow as tf
 
-import pggan_utils
+from nets import pggan_utils
 import util_misc
 from libs import ops
 
